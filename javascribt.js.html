@@ -1,0 +1,28 @@
+<html>
+        <head><title>Downloaded HTML</title></head>
+        <body>
+            <pre style="white-space: pre-wrap; word-wrap: break-word;">document.addEventListener('DOMContentLoaded', () => {
+    const demoForm = document.getElementById('demoForm');
+
+    if (demoForm) {
+        demoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('demoName').value.trim();
+            const phone = document.getElementById('demoPhone').value.trim();
+            const service = document.getElementById('demoService').value;
+
+            if (!name || !phone) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+
+            const msg = `Hi Abu, I'm ${name} (${phone}). Interested in ${service}.`;
+            const whatsappUrl = `https://wa.me/919707167986?text=${encodeURIComponent(msg)}`;
+
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+});</pre>
+        </body>
+    </html>
